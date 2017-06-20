@@ -1,0 +1,39 @@
+<h1 align="center">DATA MAHASISWA</h1>
+<h2 align="center">UNIVERSITAS SAINS AL-QUR'AN</h2>
+
+<button *ngIf="!newMahasiswa" class="btn btn-success" (click)="showMahasiswaForm(null)"><i class="fa fa-plus"></i></button>
+<br />
+<form *ngIf="showForm">
+  <h2>Data Mahasiswa</h2>
+  <p>Nama Depan: <input type="text" name="firstName" [(ngModel)]="formMahasiswa.firstName" /></p>
+  <p>Nama Belakang: <input type="text" name="lastName" [(ngModel)]="formMahasiswa.lastName" /></p>
+  <p>Keterangan: <input type="text" name="description" [(ngModel)]="formMahasiswa.description" /></p>
+  <p>
+    <button type="button" class="btn btn-primary" (click)="saveMahasiswa(formMahasiswa)">Simpan</button>
+  </p>
+</form>
+<br />
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Nama Depan</th>
+      <th>Nama Belakang</th>
+      <th>Keterangan</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let mahasiswa of mahasiswas">
+      <td>{{mahasiswa.id}}</td>
+      <td>{{mahasiswa.firstName}}</td>
+      <td>{{mahasiswa.lastName}}</td>
+      <td>{{mahasiswa.description}}</td>
+      <td>
+        <button class="btn btn-info" (click)="showMahasiswaForm(mahasiswa)"><i class="fa fa-edit"></i></button>
+        <button class="btn btn-danger" (click)="removeMahasiswa(mahasiswa)"><i class="fa fa-minus"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
