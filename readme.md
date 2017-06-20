@@ -1,4 +1,1 @@
-Laravel and Angular
-
-~ Moch. Agita Fauzi (2015150065)
-~ Muhammad Yusuf    (2014150010)
+Dewangga Pramudhita 2014157026
